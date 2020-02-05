@@ -30,3 +30,10 @@ grep -v ">" Y55_JRIF00000000_SGD_cds.fsa |grep -o "C\|G" | wc -l
 grep -v ">" Y55_JRIF00000000_SGD_cds.fsa |grep -o "A\|T\|G\|C" | wc -l
 # returns: 8073830
 # Using bc the percentage of GC content is calculated to 0.39534335, very close to the value in 2).
+#3b)
+# Counting all lines with ">" in the  reference genome, this will be equal to all ORFs.
+grep ">" data2/orf_coding_all_R64-2-1_20150113.fasta | wc -l
+# returns: 6713
+# Counting all lines with ">" in the Y55 genome, this will be equal to number of ORFs.
+grep ">" Y55_JRIF00000000_SGD_cds.fsa | wc -l
+# returns: 5330
