@@ -1,10 +1,10 @@
 # Homework 1
 # 1) count the number of genes on chromosome II ("ch(II"). 
-# grep finds all "chrII" in the given file. cut -f 3 take out column 3  on the lines where "chrII" occurs
-# and sort direct column 3 to a given file.
+# grep finds all "chrII" followed by a tab, in the given file. sort direct the output to a given file in sorted order.
 #  wc -l couts the number of lines where "gene" occurs on.
-grep "chrII" data2/saccharomyces_cerevisiae_R64-2-1_20150113.gff | cut -f 3 | sort > homeworks/group_chrII.txtgrep "gene" homeworks/group_chrII.txt | wc -l
-#The answer i got was 681
+grep "chrII$(printf '\t')" data2/saccharomyces_cerevisiae_R64-2-1_20150113.gff | sort > homeworks/group_chrII.txt 
+grep "gene" homeworks/group_chrII.txt | wc -l
+# returns: 485
 
 # 2) Count GC content.
 # First sort out only the bases from the file, using grep -v that returns the file without the lines that contain the matching sequence.
